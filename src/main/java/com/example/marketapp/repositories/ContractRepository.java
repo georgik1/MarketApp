@@ -34,7 +34,6 @@ public interface ContractRepository extends JpaRepository<Contract, Long> {
     List<Contract> getAllClosedContracts();
 
 
-    //TODO: fix method name
     @Query("SELECT c FROM Contract c WHERE c.sellerId = :sellerId")
-    List<Contract> getAllContactsBySelerId(@Param("sellerId") Long sellerId);
+    List<Contract> getAllContactsBySellerId(@Param("sellerId") Long sellerId);
 }

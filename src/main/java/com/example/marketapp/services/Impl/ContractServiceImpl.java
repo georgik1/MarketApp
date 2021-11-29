@@ -100,7 +100,7 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public List<GetClosedContractDto> getAllContractsBySellerId(Long sellerId) {
 
-        return contractRepository.getAllContactsBySelerId(sellerId).stream()
+        return contractRepository.getAllContactsBySellerId(sellerId).stream()
                 .map(contract -> {
                     GetClosedContractDto dto = new GetClosedContractDto();
                     User seller = userRepository.getById(contract.getSellerId());
