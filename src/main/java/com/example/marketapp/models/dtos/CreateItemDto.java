@@ -2,9 +2,7 @@ package com.example.marketapp.models.dtos;
 
 public class CreateItemDto {
 
-
     private String itemName;
-
     private Long ownerId;
 
 

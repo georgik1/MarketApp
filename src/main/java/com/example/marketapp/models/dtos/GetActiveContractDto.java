@@ -1,0 +1,58 @@
+package com.example.marketapp.models.dtos;
+
+import java.math.BigDecimal;
+
+public class GetActiveContractDto {
+
+    private Long sellerId;
+    private String sellerUsername;
+    private Long itemId;
+    private BigDecimal price;
+    private boolean active;
+
+
+    public GetActiveContractDto() {
+    }
+
+
+    public Long getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(Long sellerId) {
+        this.sellerId = sellerId;
+    }
+
+    public String getSellerUsername() {
+        return sellerUsername;
+    }
+
+    public void setSellerUsername(String sellerUsername) {
+        this.sellerUsername = sellerUsername;
+    }
+
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public boolean getActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+}
+

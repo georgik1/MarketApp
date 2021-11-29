@@ -12,4 +12,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     @Query("SELECT i FROM Item i WHERE i.user.id = :userId")
     List<Item> getAllItemsByOwnerId(@Param("userId")Long userId);
+
 }

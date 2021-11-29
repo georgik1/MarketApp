@@ -8,6 +8,10 @@ public class GetItemDto {
     private String ownerUsername;
 
 
+    public GetItemDto() {
+    }
+
+
     public Long getId() {
         return id;
     }

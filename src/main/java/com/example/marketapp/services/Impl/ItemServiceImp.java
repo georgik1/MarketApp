@@ -7,7 +7,6 @@ import com.example.marketapp.models.entities.User;
 import com.example.marketapp.repositories.ItemRepository;
 import com.example.marketapp.repositories.UserRepository;
 import com.example.marketapp.services.ItemsService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,16 +22,6 @@ public class ItemServiceImp implements ItemsService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private ModelMapper modelMapper;
-
-
-//    public List<ItemsOwnedByUserDto> getAllItems() {
-//        return userRepository.findAll()
-//                .stream()
-//                .map(this::itemsOwnedByUserDto)
-//                .collect(Collectors.toList());
-//    }
 
     @Override
     public void createItem(CreateItemDto createItemDto) {
@@ -60,8 +49,5 @@ public class ItemServiceImp implements ItemsService {
                     return getItemDto;
                 })
                 .collect(Collectors.toList());
-
     }
-
-
 }
