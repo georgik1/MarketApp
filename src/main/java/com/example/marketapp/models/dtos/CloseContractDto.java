@@ -5,8 +5,10 @@ public class CloseContractDto {
     private Long itemId;
     private Long buyerId;
 
+
     public CloseContractDto() {
     }
+
 
     public Long getItemId() {
         return itemId;

@@ -12,6 +12,7 @@ public class GetClosedContractDto {
     private BigDecimal price;
     private boolean active;
 
+
     public GetClosedContractDto() {
     }
 

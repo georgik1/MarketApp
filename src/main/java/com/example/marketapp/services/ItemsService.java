@@ -1,6 +1,5 @@
 package com.example.marketapp.services;
 
-import com.example.marketapp.models.dtos.CloseContractDto;
 import com.example.marketapp.models.dtos.CreateItemDto;
 import com.example.marketapp.models.dtos.GetItemDto;
 
@@ -10,8 +9,5 @@ public interface ItemsService {
 
     void createItem(CreateItemDto createItemDto);
 
-    List<GetItemDto>  getAllItems(Long id);
-
-
-
+    List<GetItemDto> getAllItems(Long id);
 }

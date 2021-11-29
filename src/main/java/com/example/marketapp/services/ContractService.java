@@ -20,5 +20,4 @@ public interface ContractService {
     List<GetClosedContractDto> getAllClosedContracts();
 
     List<GetClosedContractDto> getAllContractsBySellerId(Long sellerId);
-
 }

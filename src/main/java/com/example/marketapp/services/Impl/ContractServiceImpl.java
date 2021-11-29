@@ -106,12 +106,11 @@ public class ContractServiceImpl implements ContractService {
                     User seller = userRepository.getById(contract.getSellerId());
                     dto.setSellerId(contract.getSellerId());
                     dto.setSellerUsername(seller.getUserName());
-                    if(dto.getBuyerId() != null) {
+                    if (dto.getBuyerId() != null) {
                         User buyer = userRepository.getById(contract.getBuyerId());
                         dto.setBuyerId(contract.getBuyerId());
                         dto.setBuyerUsername(buyer.getUserName());
                     }
-
                     dto.setItemId(contract.getItemId());
                     dto.setPrice(contract.getPrice());
                     dto.setActive(false);
@@ -119,7 +118,5 @@ public class ContractServiceImpl implements ContractService {
                 })
                 .collect(Collectors.toList());
     }
-
-
 }
 
