@@ -16,8 +16,12 @@ import java.util.List;
 @RequestMapping("/api/contract")
 public class ContractController {
 
+    private final ContractServiceImpl contractServiceImpl;
+
     @Autowired
-    private ContractServiceImpl contractServiceImpl;
+    public ContractController(ContractServiceImpl contractServiceImpl) {
+        this.contractServiceImpl = contractServiceImpl;
+    }
 
     @PostMapping("create")
     public void createContract(@RequestBody UpdateContractDto updateContractDto) {
@@ -25,37 +29,27 @@ public class ContractController {
     }
 
     @PutMapping("update-price")
-    public ResponseEntity updateContractPrice(@RequestBody UpdateContractDto updateContractDto) {
-
-        if (contractServiceImpl.updateContractPrice(updateContractDto)){
-            return new ResponseEntity(HttpStatus.OK);
-        }else{
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
+    public void updateContractPrice(@RequestBody UpdateContractDto updateContractDto) {
+        contractServiceImpl.updateContractPrice(updateContractDto);
     }
 
     @GetMapping("get-active")
-    public List<GetActiveContractDto> getActiveContracts(){
+    public List<GetActiveContractDto> getActiveContracts() {
         return contractServiceImpl.getAllActiveContracts();
     }
 
     @PutMapping("close")
-    public ResponseEntity closeContract(@RequestBody CloseContractDto closeContractDto) {
-
-        if (contractServiceImpl.closeContract(closeContractDto)){
-            return new ResponseEntity(HttpStatus.OK);
-        }else{
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
+    public void closeContract(@RequestBody CloseContractDto closeContractDto) {
+        contractServiceImpl.closeContract(closeContractDto));
     }
 
     @GetMapping("get-closed")
-    public List<GetClosedContractDto> getClosedContracts(){
+    public List<GetClosedContractDto> getClosedContracts() {
         return contractServiceImpl.getAllClosedContracts();
     }
 
     @GetMapping("get/{id}")
-    public List<GetClosedContractDto> getContractsBySellerId(@PathVariable("id") Long sellerId){
+    public List<GetClosedContractDto> getContractsBySellerId(@PathVariable("id") Long sellerId) {
         return contractServiceImpl.getAllContractsBySellerId(sellerId);
     }
 }

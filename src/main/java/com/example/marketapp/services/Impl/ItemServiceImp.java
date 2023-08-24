@@ -16,12 +16,16 @@ import java.util.stream.Collectors;
 @Service
 public class ItemServiceImp implements ItemsService {
 
-    @Autowired
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
+
+    private final UserRepository userRepository;
+
 
     @Autowired
-    private UserRepository userRepository;
-
+    public ItemServiceImp(ItemRepository itemRepository, UserRepository userRepository){
+        this.itemRepository = itemRepository;
+        this.userRepository = userRepository;
+    }
 
     @Override
     public void createItem(CreateItemDto createItemDto) {

@@ -12,8 +12,13 @@ import java.util.List;
 @RequestMapping("/api/item")
 public class ItemController {
 
+
+    private final ItemServiceImp itemServiceImp;
+
     @Autowired
-    private ItemServiceImp itemServiceImp;
+    public ItemController(ItemServiceImp itemServiceImp) {
+        this.itemServiceImp = itemServiceImp;
+    }
 
     @PostMapping("create")
     public void createItem(@RequestBody CreateItemDto createItemDto){

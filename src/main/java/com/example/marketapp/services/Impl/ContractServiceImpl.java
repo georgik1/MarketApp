@@ -21,14 +21,19 @@ import java.util.stream.Collectors;
 @Service
 public class ContractServiceImpl implements ContractService {
 
-    @Autowired
-    private ContractRepository contractRepository;
+
+  final private ContractRepository contractRepository;
+
+  final private UserRepository userRepository;
+
+  final private ItemRepository itemRepository;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private ItemRepository itemRepository;
+    public ContractServiceImpl(ContractRepository contractRepository, UserRepository userRepository, ItemRepository itemRepository) {
+        this.contractRepository = contractRepository;
+        this.userRepository = userRepository;
+        this.itemRepository = itemRepository;
+    }
 
     @Override
     public void createContract(UpdateContractDto updateContractDto) {

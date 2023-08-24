@@ -1,9 +1,16 @@
 package com.example.marketapp.models.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -18,40 +25,4 @@ public class User {
 
     @Column(name = "is_seller")
     private boolean isSeller;
-
-    public User() {
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public Long getAccount() {
-        return account;
-    }
-
-    public void setAccount(Long account) {
-        this.account = account;
-    }
-
-    public boolean isSeller() {
-        return isSeller;
-    }
-
-    public void setSeller(boolean seller) {
-        isSeller = seller;
-    }
 }
